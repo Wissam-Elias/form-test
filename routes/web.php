@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'showPage1'])->name('pg1');
+Route::post('/login', [AuthController::class, 'pg2'])->name('pg2');
+Route::post('/login', [AuthController::class, 'pg3'])->name('pg3');
+
 
 
 Route::get('/', function () {
