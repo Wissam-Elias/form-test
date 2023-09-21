@@ -9,6 +9,7 @@ class Information extends Model
 {
     use HasFactory;
 
+    protected $table = 'informations';
     protected $fillable = [
         'sex',
         'birth_date',

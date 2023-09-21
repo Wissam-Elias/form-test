@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InformationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,14 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/login', [AuthController::class, 'showPage1'])->name('pg1');
-Route::post('/login', [AuthController::class, 'pg2'])->name('pg2');
-Route::post('/login', [AuthController::class, 'pg3'])->name('pg3');
+
+Route::get('/form/step1', [InformationController::class, 'showStep1'])->name('form.step1');
+Route::post('/form/step1', [InformationController::class, 'storeStep1']);
+
+Route::get('/form/step2', [InformationController::class, 'showStep2'])->name('form.step2');
+Route::post('/form/step2', [InformationController::class, 'storeStep2']);
+
+Route::get('/form/result', [InformationController::class, 'showResult'])->name('form.result');
 
 
 

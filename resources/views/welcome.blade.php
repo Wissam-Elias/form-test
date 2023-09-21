@@ -9,9 +9,12 @@
                 @guest
                     <a href="{{ route('login') }}" class="btn btn-primary btn-lg mt-3">Login</a>
                     <a href="{{ route('register') }}" class="btn btn-primary btn-lg mt-3">Register</a>
-                @else
+                @elseif (!Auth::user()->information)
                     <h3>hello {{ Auth::user()->name }}</h3>
-                    <a href="{{ route('pg1') }}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+                    <a href="{{ route('form.step1') }}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+                @else
+                    <h3>Congrates you completed the form, you can see the results here</h3>
+                    <a href="{{ route('form.result') }}" class="btn btn-primary btn-lg mt-3">Show Results</a>
                 @endguest
 
             </div>

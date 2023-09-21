@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
             $table->enum('sex', ['MALE', 'FEMALE']);
-            $table->date('birth_date');
+            $table->dateTime('birth_date');
             $table->enum('marital_status', ['MARRIED', 'BACHELOR', 'ABSOLUTE']);
             $table->string('emirate');
             $table->integer('annual_income');
